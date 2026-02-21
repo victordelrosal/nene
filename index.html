@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nene: Irene Vizcaíno Pelayo (1924-2019)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           RESET & BASE
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 18px;
+        }
+
+        body {
+            font-family: 'Lora', Georgia, serif;
+            background-color: #0f0b07;
+            color: #f0e4d0;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* ========================================
+           TYPOGRAPHY
+           ======================================== */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .handwritten {
+            font-family: 'Caveat', cursive;
+        }
+
+        /* ========================================
+           NAVIGATION
+           ======================================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            background: linear-gradient(to bottom, rgba(15, 11, 7, 0.95) 0%, rgba(15, 11, 7, 0.7) 70%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        nav.visible {
+            opacity: 1;
+        }
+
+        nav a {
+            color: #a08860;
+            text-decoration: none;
+            font-family: 'Caveat', cursive;
+            font-size: 1.1rem;
+            letter-spacing: 0.03em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #c9a84c;
+        }
+
+        /* ========================================
+           SECTIONS
+           ======================================== */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-number {
+            font-family: 'Caveat', cursive;
+            font-size: 1rem;
+            color: #6b5a3e;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            color: #c9a84c;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, #c9a84c, transparent);
+            margin-top: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: #d4c4a8;
+            font-size: 1rem;
+        }
+
+        p.destacado {
+            font-size: 1.15rem;
+            color: #f0e4d0;
+            font-style: italic;
+            border-left: 3px solid #c9a84c;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        /* ========================================
+           FADE IN ANIMATIONS
+           ======================================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-delay-1 { transition-delay: 0.15s; }
+        .fade-in-delay-2 { transition-delay: 0.3s; }
+        .fade-in-delay-3 { transition-delay: 0.45s; }
+        .fade-in-delay-4 { transition-delay: 0.6s; }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(ellipse at center, #1a1209 0%, #0f0b07 70%);
+        }
+
+        .hero-photo-container {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #c9a84c33;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 0 60px rgba(201, 168, 76, 0.1);
+        }
+
+        .hero-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(15%) contrast(1.05);
+        }
+
+        .hero-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 900;
+            color: #f0e4d0;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-nene {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #c9a84c;
+            margin-bottom: 1rem;
+        }
+
+        .hero-years {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.2rem;
+            color: #8a7a5e;
+            letter-spacing: 0.3em;
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-family: 'Lora', Georgia, serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #a08860;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .scroll-indicator span {
+            font-family: 'Caveat', cursive;
+            font-size: 0.9rem;
+            color: #6b5a3e;
+        }
+
+        .scroll-indicator .arrow {
+            width: 20px;
+            height: 20px;
+            border-right: 2px solid #6b5a3e;
+            border-bottom: 2px solid #6b5a3e;
+            transform: rotate(45deg);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        /* ========================================
+           DIVIDERS
+           ======================================== */
+        .divider {
+            text-align: center;
+            padding: 3rem 0;
+            color: #3d3222;
+            font-size: 1.5rem;
+            letter-spacing: 1em;
+        }
+
+        /* ========================================
+           PHOTO SECTIONS
+           ======================================== */
+        .photo-frame {
+            margin: 2.5rem auto;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            filter: sepia(10%) contrast(1.02);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .photo-frame .caption {
+            font-family: 'Caveat', cursive;
+            font-size: 1.1rem;
+            color: #8a7a5e;
+            text-align: center;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* ========================================
+           TIMELINE (LOS HIJOS)
+           ======================================== */
+        .children-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1px;
+            margin: 2rem 0;
+            background: #1a150e;
+            border: 1px solid #2a2218;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .child-card {
+            background: #16120b;
+            padding: 1.2rem 1rem;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .child-card:hover {
+            background: #1e1810;
+        }
+
+        .child-number {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            color: #c9a84c;
+            line-height: 1;
+        }
+
+        .child-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1rem;
+            color: #f0e4d0;
+            margin: 0.3rem 0;
+        }
+
+        .child-date {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 0.8rem;
+            color: #6b5a3e;
+        }
+
+        .children-summary {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border: 1px solid #2a2218;
+            border-radius: 8px;
+            background: #16120b;
+        }
+
+        .children-summary .big-number {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 4rem;
+            color: #c9a84c;
+            line-height: 1;
+        }
+
+        .children-summary .label {
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            color: #8a7a5e;
+        }
+
+        /* ========================================
+           FAMILY TREE
+           ======================================== */
+        .tree-container {
+            margin: 2rem 0;
+        }
+
+        .tree-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 2px solid #2a2218;
+            position: relative;
+        }
+
+        .tree-section::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 1.5rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #c9a84c;
+        }
+
+        .tree-label {
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            color: #c9a84c;
+            margin-bottom: 0.5rem;
+        }
+
+        .tree-names {
+            font-size: 0.95rem;
+            color: #a08860;
+        }
+
+        .tree-names strong {
+            color: #f0e4d0;
+        }
+
+        /* ========================================
+           RULFO CONNECTION
+           ======================================== */
+        .rulfo-quote {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-style: italic;
+            color: #c9a84c;
+            text-align: center;
+            padding: 3rem 2rem;
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .rulfo-quote::before,
+        .rulfo-quote::after {
+            font-size: 4rem;
+            color: #2a2218;
+            position: absolute;
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .rulfo-quote::before {
+            content: '\201C';
+            top: 0;
+            left: 0;
+        }
+
+        .rulfo-quote::after {
+            content: '\201D';
+            bottom: -1rem;
+            right: 0;
+        }
+
+        .rulfo-attribution {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b5a3e;
+            margin-top: 0.5rem;
+        }
+
+        .connection-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        .connection-table th {
+            font-family: 'Caveat', cursive;
+            font-size: 1.1rem;
+            color: #c9a84c;
+            text-align: left;
+            padding: 0.8rem;
+            border-bottom: 1px solid #2a2218;
+        }
+
+        .connection-table td {
+            padding: 0.6rem 0.8rem;
+            border-bottom: 1px solid #16120b;
+            color: #a08860;
+        }
+
+        .connection-table td:first-child {
+            color: #6b5a3e;
+            font-size: 0.85rem;
+            width: 30%;
+        }
+
+        /* ========================================
+           PLACES
+           ======================================== */
+        .places-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .place-card {
+            padding: 2rem;
+            background: #16120b;
+            border: 1px solid #2a2218;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .place-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #c9a84c, transparent);
+        }
+
+        .place-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.4rem;
+            color: #c9a84c;
+            margin-bottom: 0.3rem;
+        }
+
+        .place-role {
+            font-family: 'Caveat', cursive;
+            font-size: 1.1rem;
+            color: #6b5a3e;
+            margin-bottom: 1rem;
+        }
+
+        .place-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* ========================================
+           LEGACY / CLOSING
+           ======================================== */
+        .legacy-dates {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .legacy-date {
+            text-align: center;
+        }
+
+        .legacy-date .year {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3rem;
+            color: #c9a84c;
+            line-height: 1;
+        }
+
+        .legacy-date .place {
+            font-family: 'Caveat', cursive;
+            font-size: 1.1rem;
+            color: #6b5a3e;
+        }
+
+        .legacy-line {
+            width: 60px;
+            height: 1px;
+            background: #3d3222;
+            align-self: center;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid #1a150e;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: #4a3d2a;
+        }
+
+        footer .family-name {
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            color: #6b5a3e;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 768px) {
+            html { font-size: 16px; }
+
+            section { padding: 4rem 1.5rem; }
+
+            nav {
+                gap: 0.8rem;
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            nav a { font-size: 0.95rem; }
+
+            .hero-photo-container {
+                width: 170px;
+                height: 170px;
+            }
+
+            .children-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .legacy-dates { gap: 1.5rem; }
+
+            .legacy-date .year { font-size: 2.2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .children-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav a { font-size: 0.85rem; }
+        }
+
+        /* ========================================
+           BACKGROUND TEXTURE
+           ======================================== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(ellipse at 20% 50%, rgba(26, 18, 9, 0.8) 0%, transparent 70%),
+                radial-gradient(ellipse at 80% 20%, rgba(30, 22, 12, 0.5) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Section alternating subtle backgrounds */
+        section:nth-child(even) {
+            background: linear-gradient(to bottom, transparent, rgba(26, 18, 9, 0.3), transparent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav id="main-nav">
+        <a href="#hero">Inicio</a>
+        <a href="#la-mujer">La Mujer</a>
+        <a href="#los-tiempos">Los Tiempos</a>
+        <a href="#el-matrimonio">El Matrimonio</a>
+        <a href="#los-hijos">Los Hijos</a>
+        <a href="#las-raices">Las Raíces</a>
+        <a href="#rulfo">Rulfo</a>
+        <a href="#los-lugares">Los Lugares</a>
+        <a href="#el-legado">El Legado</a>
+    </nav>
+
+    <!-- ==========================================
+         HERO
+         ========================================== -->
+    <section id="hero">
+        <div class="hero-photo-container fade-in">
+            <img src="nene-retrato.jpeg" alt="Irene Vizcaíno Pelayo, Nene">
+        </div>
+        <h1 class="hero-name fade-in fade-in-delay-1">Irene Vizcaíno Pelayo</h1>
+        <div class="hero-nene handwritten fade-in fade-in-delay-2">Nene</div>
+        <div class="hero-years fade-in fade-in-delay-3">1 9 2 4 &nbsp;&mdash;&nbsp; 2 0 1 9</div>
+        <p class="hero-subtitle fade-in fade-in-delay-4">
+            Del Rancho de Los González a la eternidad.<br>
+            Una vida de casi un siglo, contada por quienes la aman.
+        </p>
+        <div class="scroll-indicator">
+            <span class="handwritten">Descubre su historia</span>
+            <div class="arrow"></div>
+        </div>
+    </section>
+
+    <div class="divider">&#10043; &#10043; &#10043;</div>
+
+    <!-- ==========================================
+         LA MUJER
+         ========================================== -->
+    <section id="la-mujer">
+        <div class="section-inner">
+            <div class="section-number fade-in handwritten">I</div>
+            <h2 class="section-title fade-in">La Mujer</h2>
+
+            <p class="fade-in">
+                Nació el 24 de mayo de 1924 en el Rancho de Los González, un pequeño
+                caserío en el municipio de Tonaya, enclavado en la Sierra de Amula del
+                sur de Jalisco. Hija de <strong>Faustino Vizcaíno Pelayo</strong> y
+                <strong>Crescenciana Pelayo Naranjo</strong>, campesinos trabajadores
+                de ese rancho. Gente sobria. Gente de la tierra.
+            </p>
+
+
+            <div class="photo-frame fade-in">
+                <img src="nene-flores.jpeg" alt="Nene con flores">
+                <div class="caption handwritten">Nene, siempre con su sonrisa</div>
+            </div>
+
+            <p class="fade-in">
+                La conocían como <em>cabaladora</em>: mujer cabal, íntegra, incansable.
+                Su mundo era el de los quehaceres de la casa, el cuidado de sus hijos,
+                el ritmo de las estaciones y las fiestas del calendario católico. Su
+                cumpleaños, el 24 de mayo, coincidía con la fiesta de María Auxiliadora,
+                y la familia lo celebró como tal durante casi 95 años, hasta el último.
+            </p>
+
+            <p class="fade-in">
+                Perdió a su madre siendo niña. Se casó a los 13 años. Tuvo 18 hijos en
+                26 años. Sobrevivió a su esposo. Vivió hasta los 94 años, 10 meses y 20
+                días. Murió el 14 de abril de 2019 en Villa de Álvarez, Colima, lejos de
+                las montañas donde nació, pero rodeada de lo que construyó: una familia
+                inmensa.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider">&#10043; &#10043; &#10043;</div>
+
+    <!-- ==========================================
+         LOS TIEMPOS
+         ========================================== -->
+    <section id="los-tiempos">
+        <div class="section-inner">
+            <div class="section-number fade-in handwritten">II</div>
+            <h2 class="section-title fade-in">Los Tiempos</h2>
+
+            <p class="fade-in">
+                Irene nació cuatro años después de que terminara la Revolución Mexicana.
+                El país estaba roto. El viejo orden social, destruido. Y en el occidente
+                de México, lo peor estaba por venir.
+            </p>
+
+            <p class="destacado fade-in">
+                Irene tenía dos años cuando cerraron las iglesias.
+            </p>
+
+            <p class="fade-in">
+                En 1926, el presidente Plutarco Elías Calles promulgó la Ley Calles,
+                que restringió severamente a la Iglesia Católica. El 31 de julio de 1926,
+                la jerarquía católica suspendió todo culto público en México. La respuesta
+                fue la <strong>Guerra Cristera</strong> (1926-1929), una insurrección
+                campesina que devastó precisamente los estados de Jalisco, Colima,
+                Michoacán, Guanajuato y Zacatecas. Tonaya, en el corazón de la Sierra de
+                Amula, estaba en el epicentro.
+            </p>
+
+            <p class="fade-in">
+                Las fuerzas del gobierno destruyeron pueblos sospechosos de apoyar a los
+                cristeros. Ejecutaron prisioneros. Implementaron la "reconcentración",
+                el desplazamiento forzado de poblaciones rurales. Las iglesias fueron
+                cerradas, los sacerdotes perseguidos o fusilados. Las familias celebraban
+                matrimonios a medianoche en cuartos escondidos, bautizos en cuevas,
+                misas en casas particulares con sacerdotes que arriesgaban la vida.
+            </p>
+
+            <p class="fade-in">
+                La paz de 1929 fue frágil. En los años treinta, el gobierno impuso la
+                educación socialista en las escuelas rurales, lo que provocó una
+                <strong>segunda Cristiada</strong> (1934-1939). De nuevo cerraron las
+                iglesias. De nuevo desaparecieron los sacerdotes.
+            </p>
+
+            <p class="destacado fade-in">
+                Toda la infancia y adolescencia de Irene, desde su nacimiento en 1924
+                hasta su matrimonio en 1937, estuvo enmarcada por dos guerras religiosas
+                consecutivas, ambas con epicentro en su tierra. Fue hija de la Cristiada.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider">&#10043; &#10043; &#10043;</div>
+
+    <!-- ==========================================
+         EL MATRIMONIO
+         ========================================== -->
+    <section id="el-matrimonio">
+        <div class="section-inner">
+            <div class="section-number fade-in handwritten">III</div>
+            <h2 class="section-title fade-in">El Matrimonio</h2>
+
+            <p class="fade-in">
+                En mayo de 1937, en el pueblo de Comala, Colima, una niña de 13 años se
+                casó con un joven comerciante de 21. Ella era Irene Vizcaíno. Él,
+                <strong>Secundino Ahumada Fuentes</strong>, originario de Villa de
+                Álvarez.
+            </p>
+
+            <p class="fade-in">
+                Se casaron dos veces en menos de dos semanas: primero por lo civil, el
+                <strong>18 de mayo de 1937</strong>, ante el Presidente Municipal de
+                Comala, Juan G. González; luego por la Iglesia, el <strong>31 de mayo</strong>,
+                en la Parroquia de San Miguel del Espíritu Santo, en el centro de Comala.
+            </p>
+
+            <p class="destacado fade-in">
+                Su madre, Crescenciana, ya había muerto. Irene era huérfana de madre
+                a los 13 años, el día de su boda.
+            </p>
+
+            <p class="fade-in">
+                Quien representó al padre de la novia en la ceremonia civil, y quien firmó
+                el acta religiosa como sacerdote oficiante, fue la misma persona:
+                <strong>el Pbro. Francisco de Sales Vizcaíno</strong>, un Vizcaíno de la
+                familia que había entrado al sacerdocio. Un familiar y un sacerdote. Casó a
+                una Vizcaíno con un Ahumada, uniendo las familias por sangre y por sacramento.
+            </p>
+
+            <p class="fade-in">
+                La Iglesia tuvo que otorgar múltiples dispensas: de proclamas, de edad por la
+                novia, de feligresía, de consentimiento paterno. Se enviaron exhortos a las
+                parroquias de la Trinidad de Guadalajara y de Villa de Álvarez. Todo fue
+                dispuesto con cuidado, a pesar de la juventud de la novia. Los testigos fueron
+                Heliodoro Fuentes y Miguel Fuentes y Fuentes, vecinos del lugar.
+            </p>
+
+            <p class="fade-in">
+                Quince meses después, el 16 de agosto de 1938, Irene dio a luz a su primera
+                hija, Ma. Griselda. Tenía 14 años.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider">&#10043; &#10043; &#10043;</div>
+
+    <!-- ==========================================
+         LOS HIJOS
+         ========================================== -->
+    <section id="los-hijos">
+        <div class="section-inner">
+            <div class="section-number fade-in handwritten">IV</div>
+            <h2 class="section-title fade-in">Los Hijos</h2>
+
+            <p class="fade-in">
+                En 26 años, Irene y Secundino trajeron al mundo a 18 hijos. Los primeros
+                nueve nacieron en apenas 11 años, con intervalos de hasta 12 meses entre
+                uno y otro. La última, Alicia, nació cuando Irene tenía 39 años.
+            </p>
+
+            <div class="children-grid fade-in">
+                <div class="child-card">
+                    <div class="child-number handwritten">1</div>
+                    <div class="child-name">Ma. Griselda</div>
+                    <div class="child-date">16 agosto 1938</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">2</div>
+                    <div class="child-name">José Francisco</div>
+                    <div class="child-date">14 abril 1940</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">3</div>
+                    <div class="child-name">Roberto</div>
+                    <div class="child-date">3 noviembre 1941</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">4</div>
+                    <div class="child-name">Sergio</div>
+                    <div class="child-date">9 agosto 1943</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">5</div>
+                    <div class="child-name">Carlos</div>
+                    <div class="child-date">14 septiembre 1944</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">6</div>
+                    <div class="child-name">Daniel</div>
+                    <div class="child-date">12 enero 1946</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">7</div>
+                    <div class="child-name">Abel</div>
+                    <div class="child-date">20 abril 1947</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">8</div>
+                    <div class="child-name">Salvador</div>
+                    <div class="child-date">29 octubre 1948</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">9</div>
+                    <div class="child-name">Ma. Guadalupe</div>
+                    <div class="child-date">18 diciembre 1949</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">10</div>
+                    <div class="child-name">Aurora</div>
+                    <div class="child-date">20 agosto 1951</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">11</div>
+                    <div class="child-name">Ma. de los Ángeles</div>
+                    <div class="child-date">2 noviembre 1952</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">12</div>
+                    <div class="child-name">Rosa María</div>
+                    <div class="child-date">13 diciembre 1954</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">13</div>
+                    <div class="child-name">Gabriel</div>
+                    <div class="child-date">4 abril 1956</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">14</div>
+                    <div class="child-name">Miguel Ángel</div>
+                    <div class="child-date">4 diciembre 1957</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">15</div>
+                    <div class="child-name">Leticia</div>
+                    <div class="child-date">15 febrero 1959</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">16</div>
+                    <div class="child-name">Luis Jorge</div>
+                    <div class="child-date">17 abril 1961</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">17</div>
+                    <div class="child-name">Alfonso</div>
+                    <div class="child-date">9 abril 1962</div>
+                </div>
+                <div class="child-card">
+                    <div class="child-number handwritten">18</div>
+                    <div class="child-name">Alicia</div>
+                    <div class="child-date">30 marzo 1964</div>
+                </div>
+            </div>
+
+            <div class="children-summary fade-in">
+                <div class="big-number">18</div>
+                <div class="label handwritten">hijos en 26 años</div>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    De Ma. Griselda (1938) a Alicia (1964). Once varones, siete mujeres.
+                    Algunos llevan los nombres de sus abuelos: Aurora, como la madre de
+                    Secundino; José Francisco, honrando al abuelo José María y al sacerdote
+                    Francisco de Sales; Salvador, como el tío de Secundino.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider">&#10043; &#10043; &#10043;</div>
+
+    <!-- ==========================================
+         LAS RAÍCES
+         ========================================== -->
+    <section id="las-raices">
+        <div class="section-inner">
+            <div class="section-number fade-in handwritten">V</div>
+            <h2 class="section-title fade-in">Las Raíces</h2>
+
+            <p class="fade-in">
+                Las raíces de Irene se hunden profundamente en la tierra del sur de
+                Jalisco y de Colima. Dos familias, los Vizcaíno y los Pelayo, se
+                entrelazaron durante generaciones en las pequeñas comunidades de la
+                Sierra de Amula.
+            </p>
+
+            <div class="tree-container fade-in">
+                <h3 style="color: #c9a84c; font-size: 1.2rem; margin-bottom: 1.5rem;">
+                    Línea Paterna: Los Vizcaíno
+                </h3>
+
+                <div class="tree-section">
+                    <div class="tree-label handwritten">Tatarabuelos</div>
+                    <div class="tree-names">
+                        <strong>José Lucas Vizcaíno Preciado</strong> (n. 1816, San Gabriel)
+                        y <strong>Clara de la Merced Vargas Velasco</strong>
+                    </div>
+                </div>
+
+                <div class="tree-section">
+                    <div class="tree-label handwritten">Bisabuelo</div>
+                    <div class="tree-names">
+                        <strong>Alejo Vizcaíno Vargas</strong>, hijo de Lucas y Clara.
+                        Se casó primero con María Pelayo, luego con Jesús Pelayo.
+                        Tuvo numerosos hijos, entre ellos <strong>Faustino</strong>
+                        y el sacerdote <strong>Francisco de Sales</strong>.
+                    </div>
+                </div>
+
+                <div class="tree-section">
+                    <div class="tree-label handwritten">Padre</div>
+                    <div class="tree-names">
+                        <strong>Faustino Vizcaíno Pelayo</strong> (c. 1884 - 2 junio 1958).
+                        Campesino. Se casó con su prima <strong>Crescenciana Pelayo
+                        Naranjo</strong>.
+                    </div>
+                </div>
+            </div>
+
+            <div class="tree-container fade-in">
+                <h3 style="color: #c9a84c; font-size: 1.2rem; margin-bottom: 1.5rem;">
+                    Línea Materna: Los Pelayo
+                </h3>
+
+                <div class="tree-section">
+                    <div class="tree-label handwritten">Cinco generaciones</div>
+                    <div class="tree-names">
+                        <strong>Miguel Pelayo</strong> &rarr;
+                        <strong>Ignacio Pelayo</strong> &rarr;
+                        <strong>Vicente Pelayo</strong> &rarr;
+                        <strong>Hilario Pelayo</strong> &rarr;
+                        <strong>Crescenciana Pelayo Naranjo</strong> (madre de Irene)
+                    </div>
+                </div>
+
+                <p style="font-size: 0.9rem; color: #6b5a3e; margin-top: 1rem;">
+                    Ambos padres de Irene llevaban el apellido Pelayo: Faustino Vizcaíno
+                    <em>Pelayo</em> y Crescenciana <em>Pelayo</em> Naranjo. En las pequeñas
+                    comunidades de la sierra, las familias se entrelazaban una y otra vez a
+                    lo largo de las generaciones.
+                </p>
+            </div>
+
+            <div class="tree-container fade-in">
+                <h3 style="color: #c9a84c; font-size: 1.2rem; margin-bottom: 1.5rem;">
+                    Familia del Esposo: Los Ahumada
+                </h3>
+
+                <div class="tree-section">
+                    <div class="tree-label handwritten">Ancestros más antiguos</div>
+                    <div class="tree-names">
+                        <strong>Diego Ahumada</strong> y <strong>Petra Llerenas</strong>
+                        &mdash; <strong>Juan Torres</strong> y <strong>Josefa Ortiz</strong>
+                    </div>
+                </div>
+
+                <div class="tree-section">
+                    <div class="tree-label handwritten">Suegros de Irene</div>
+                    <div class="tree-names">
+                        <strong>José María Ahumada</strong> y
+                        <strong>Aurora Fuentes Cruz</strong>, casados en 1908.
+                        Campesinos. Tuvieron tres hijos: Aurora (1911),
+                        María Teresa y <strong>Secundino</strong>.
+                    </div>
+                </div>
+            </div>
+
+            <p class="fade-in" style="font-size: 0.9rem; color: #6b5a3e; margin-top: 1rem;">
+                Hermanos de Irene: Casilda (&#10013;), Elisa, Luis (&#10013;),
+                Beatriz (&#10013;), Esperanza, Jovita (&#10013;), Isidro (&#10013;),
+                Melesio (&#10013;), Lorenzo (&#10013;).
+            </p>
+        </div>
+    </section>
+
+    <div class="divider">&#10043; &#10043; &#10043;</div>
+
+    <!-- ==========================================
+         LA SANGRE Y LA TINTA (RULFO)
+         ========================================== -->
+    <section id="rulfo">
+        <div class="section-inner">
+            <div class="section-number fade-in handwritten">VI</div>
+            <h2 class="section-title fade-in">La Sangre y la Tinta</h2>
+
+            <div class="rulfo-quote fade-in">
+                Vine a Comala porque me dijeron que acá vivía mi padre, un tal Pedro Páramo.
+            </div>
+            <div class="rulfo-attribution fade-in">
+                Juan Rulfo, <em>Pedro Páramo</em> (1955)
+            </div>
+
+            <p class="fade-in" style="margin-top: 2.5rem;">
+                En el árbol genealógico de la familia Vizcaíno, junto al nombre del
+                ancestro más antiguo, hay una anotación entre paréntesis que cambia todo:
+                <strong>"Lucas (Juan Rulfo)"</strong>.
+            </p>
+
+            <p class="fade-in">
+                El nombre completo de Juan Rulfo era <strong>Juan Nepomuceno Carlos
+                Pérez Rulfo Vizcaíno</strong>. Su apellido materno era Vizcaíno. Su madre,
+                María Vizcaíno Arias (1887-1927), era hija de <strong>Carlos Vizcaíno
+                Vargas</strong> (1846-1920), nacido en La Piña, municipio de Tonaya,
+                Jalisco. El mismo Tonaya donde nació Irene.
+            </p>
+
+            <p class="fade-in">
+                El padre de Carlos era <strong>José Lucas Vizcaíno Preciado</strong>,
+                nacido en San Gabriel en 1816. Su esposa era <strong>Clara de la
+                Merced Vargas Velasco</strong>. Son exactamente los mismos nombres que
+                aparecen en el árbol genealógico de Irene: "Lucas Vizcaíno + Clara Vargas."
+            </p>
+
+            <p class="destacado fade-in">
+                Irene Vizcaíno Pelayo y Juan Rulfo compartían ancestros comunes. Eran
+                parientes de sangre a través de la familia Vizcaíno de Tonaya.
+            </p>
+
+            <table class="connection-table fade-in">
+                <tr>
+                    <th></th>
+                    <th>Familia de Irene</th>
+                    <th>Familia de Rulfo</th>
+                </tr>
+                <tr>
+                    <td>Apellido</td>
+                    <td>Vizcaíno</td>
+                    <td>Vizcaíno (materno)</td>
+                </tr>
+                <tr>
+                    <td>Origen</td>
+                    <td>Tonaya, Jalisco</td>
+                    <td>La Piña, Tonaya, Jalisco</td>
+                </tr>
+                <tr>
+                    <td>Ancestro: Lucas</td>
+                    <td>"Lucas Vizcaíno" (árbol)</td>
+                    <td>José Lucas Vizcaíno Preciado</td>
+                </tr>
+                <tr>
+                    <td>Esposa de Lucas</td>
+                    <td>"Clara Vargas" (árbol)</td>
+                    <td>Clara de la Merced Vargas Velasco</td>
+                </tr>
+                <tr>
+                    <td>Región</td>
+                    <td>Sierra de Amula</td>
+                    <td>Sierra de Amula</td>
+                </tr>
+            </table>
+
+            <p class="fade-in">
+                Carlos Vizcaíno Vargas, abuelo materno de Rulfo, se convirtió en un gran
+                hacendado en Apulco, cerca de Tuxcacuesco. La esfera de influencia de la
+                familia Vizcaíno abarcaba exactamente la zona donde vivía la familia de
+                Irene: Tonaya, San Gabriel, Tuxcacuesco, Apulco y Sayula. La misma zona
+                del sur de Jalisco que Rulfo inmortalizó en su ficción.
+            </p>
+
+            <p class="destacado fade-in">
+                Irene Vizcaíno Pelayo nació y creció en el paisaje que Juan Rulfo
+                convirtió en literatura. Eran parientes de sangre. Ella vivió la vida
+                sobre la que él escribió. Y se casó en Comala.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider">&#10043; &#10043; &#10043;</div>
+
+    <!-- ==========================================
+         LOS LUGARES
+         ========================================== -->
+    <section id="los-lugares">
+        <div class="section-inner">
+            <div class="section-number fade-in handwritten">VII</div>
+            <h2 class="section-title fade-in">Los Lugares</h2>
+
+            <div class="places-grid">
+                <div class="place-card fade-in">
+                    <div class="place-name">Rancho de Los González, Tonaya</div>
+                    <div class="place-role handwritten">Donde nació (1924)</div>
+                    <p>
+                        Un pequeño caserío en la Sierra de Amula, municipio de Tonaya,
+                        Jalisco. Tonaya es un municipio con raíces prehispánicas, fundado
+                        por tribus de origen tolteca. Su economía giraba en torno a la
+                        producción de mezcal de agave verde, tradición de más de un siglo.
+                        La sierra es tierra de barrancos profundos, bosques de pino-encino
+                        y valles semiáridos. Sin luz eléctrica, sin caminos pavimentados,
+                        sin agua corriente. Las ciudades más cercanas quedaban a horas en
+                        mula.
+                    </p>
+                </div>
+
+                <div class="place-card fade-in">
+                    <div class="place-name">Comala, Colima</div>
+                    <div class="place-role handwritten">Donde se casó (1937)</div>
+                    <p>
+                        Del náhuatl <em>comalli</em>, "lugar de comales." En la frontera
+                        entre Jalisco y Colima, destino natural para familias que migraban
+                        desde la Sierra de Amula. Fue una importante región cafetalera;
+                        la Hacienda de San Antonio producía café que se servía en el
+                        Waldorf Astoria de Nueva York.
+                    </p>
+                    <p>
+                        Comala es mundialmente famosa como escenario de <em>Pedro Páramo</em>
+                        de Juan Rulfo. En 1961 pintaron todas sus fachadas de blanco,
+                        ganándose el nombre de "Pueblo Blanco de América." Desde 2002 es
+                        Pueblo Mágico. La Parroquia de San Miguel del Espíritu Santo, donde
+                        Irene se casó, sigue en pie en la calle V. Carranza No. 49.
+                    </p>
+                </div>
+
+                <div class="place-card fade-in">
+                    <div class="place-name">Villa de Álvarez, Colima</div>
+                    <div class="place-role handwritten">Donde vivió y murió (1937-2019)</div>
+                    <p>
+                        El municipio más pequeño pero más densamente poblado de Colima.
+                        Fundado el 15 de septiembre de 1550, se extiende al noroeste de
+                        la capital del estado, formando una sola conurbación con la ciudad
+                        de Colima. Aquí, en Paul P. Harris No. 26, Col. Vistahermosa,
+                        vivió Irene sus últimos años. Aquí murió, el 14 de abril de 2019,
+                        a las 20:30 horas, en un hospital de la Av. Lapislázuli.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider">&#10043; &#10043; &#10043;</div>
+
+    <!-- ==========================================
+         EL LEGADO
+         ========================================== -->
+    <section id="el-legado">
+        <div class="section-inner">
+            <div class="section-number fade-in handwritten">VIII</div>
+            <h2 class="section-title fade-in">El Legado</h2>
+
+            <div class="legacy-dates fade-in">
+                <div class="legacy-date">
+                    <div class="year">1924</div>
+                    <div class="place handwritten">Tonaya, Jalisco</div>
+                </div>
+                <div class="legacy-line"></div>
+                <div class="legacy-date">
+                    <div class="year">2019</div>
+                    <div class="place handwritten">Villa de Álvarez, Colima</div>
+                </div>
+            </div>
+
+            <p class="fade-in">
+                Irene vivió casi un siglo. Nació en un mundo sin electricidad, sin
+                caminos, sin derechos civiles para las mujeres. Murió en un hospital
+                moderno de una ciudad urbana. Su vida es un lente a través del cual
+                se puede ver la transformación de México.
+            </p>
+
+            <p class="fade-in">
+                Su historia fue cargada en la tradición oral,
+                en los árboles genealógicos dibujados a mano, en las actas del registro
+                civil y de la parroquia. Pero en junio de 2020, su hijo
+                <strong>Roberto Ahumada Vizcaíno</strong>, el tercero de sus 18 hijos,
+                nacido el 3 de noviembre de 1941, se sentó a escribir. Tenía 78 años.
+                Y puso en papel la historia de su madre: la
+                "Relación Genealógica de Familia Ahumada Vizcaíno."
+            </p>
+
+            <p class="destacado fade-in">
+                De una mujer nacieron 18 hijos, decenas de
+                nietos, y una historia que ahora se cuenta en estas páginas. Eso es un legado.
+            </p>
+
+            <p class="fade-in">
+                Los documentos que sobreviven, el acta de matrimonio civil de 1937, el
+                acta de matrimonio eclesiástico de la Parroquia de San Miguel del Espíritu
+                Santo, el acta de defunción de 2019, los árboles genealógicos dibujados a
+                mano y la relación genealógica de Roberto, son las piezas de un rompecabezas
+                que, juntas, reconstruyen una vida entera. La vida de una mujer que cruzó un
+                siglo cargando a cuestas todo lo que importa: familia, fe y fortaleza.
+            </p>
+
+            <p class="fade-in" style="text-align: center; margin-top: 3rem;">
+                <span class="handwritten" style="font-size: 2rem; color: #c9a84c;">
+                    Nene
+                </span>
+                <br>
+                <span style="color: #6b5a3e; font-size: 0.9rem;">
+                    Irene Vizcaíno Pelayo<br>
+                    24 de mayo de 1924 &mdash; 14 de abril de 2019<br>
+                    Rancho de Los González, Tonaya, Jalisco &mdash; Villa de Álvarez, Colima
+                </span>
+            </p>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer>
+        <div class="family-name handwritten">Familia Ahumada Vizcaíno</div>
+        <p>En memoria de Irene Vizcaíno Pelayo</p>
+        <p style="margin-top: 0.5rem;">Compilado con amor, 2026</p>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+    <script>
+        // Scroll-triggered fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Show nav after scrolling past hero
+        const nav = document.getElementById('main-nav');
+        const hero = document.getElementById('hero');
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    nav.classList.add('visible');
+                } else {
+                    nav.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        navObserver.observe(hero);
+    </script>
+</body>
+</html>
