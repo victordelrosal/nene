@@ -28,7 +28,7 @@ After marriage, she was known as **Irene Vizcaíno de Ahumada**. The family refe
 
 The marriage certificate (1937) describes Irene as "soltera, mexicana, dedicada a los quehaceres de casa" (single, Mexican, dedicated to household duties), and states she was 13 years old, "originaria del Rancho de Los González, Jal., y vecina de Villa de Álvarez, Col." This tells us that at some point before May 1937, the family had already migrated from Tonaya, Jalisco, to Villa de Álvarez, Colima.
 
-The genealogical narrative adds a revealing personal detail: Irene's birthday, May 24, fell close to the Feast of María Auxiliadora (May 24) and the Feast of La Virgen de la Refina (May 3). Because of this proximity, the family "took them as occasions for celebration of Yrene's birth, even the last one, enduring until her death." This means Irene's birthday was woven into the Catholic liturgical calendar, and the family celebrated it as such for nearly 95 years.
+**The mystery of her birthday:** Irene's mother told her she had been born on a day of the Virgin, and Irene always celebrated her birthday on **May 13**, the feast day of the Virgen de Fátima. The family honored this tradition for nearly 95 years, up to her last birthday. It was only when the family obtained a passport for Irene to travel to Europe that they discovered her official registration date was **May 24**. It did not matter: for Irene, her day was always the 13th.
 
 ### 1.3 Physical Description and Character
 
@@ -122,8 +122,9 @@ By the time of her death in 2019, Irene's civil status was recorded as **"VIUDA"
 Irene's life traced a migration path across western Mexico:
 
 1. **Rancho de Los González, Tonaya, Jalisco** (1924 to some point before 1937): birthplace, a small rural settlement in the Sierra de Amula mountains
-2. **Villa de Álvarez, Colima** (before 1937 onward): listed as her residence at the time of marriage
-3. **Paul P. Harris No. 26, Col. Vistahermosa, Colima, Col.** (final residence): the address on her death certificate
+2. **Villa de Álvarez, Colima** (before 1937 to July 1971): listed as her residence at the time of marriage; she left in July 1971 and never returned to live there
+3. **Colima, Colima** (July 1971 to 2019): she moved to the capital city and lived there for the rest of her life
+4. **Paul P. Harris No. 26, Col. Vistahermosa, Colima, Col.** (final residence): the address on her death certificate
 
 ### 1.8 Death
 
@@ -164,7 +165,7 @@ The declarant was Elías Enrique Rico Cortés (age 24, employee, no family relat
 - Nationality: Mexican
 - Origin: From the Pelayo family of the Tonaya/Jalisco region
 - Occupation: Campesina
-- Death: Before May 1937 (she is described as "finada" on Irene's marriage certificate)
+- Death: Circa 1930, when Irene was around six years old (per family memory; described as "finada" on Irene's 1937 marriage certificate)
 - Her full name, Crescenciana Pelayo Naranjo, appears on the death certificate, providing her maternal surname as Naranjo
 
 **Note on the parents' surnames:** Faustino's surname on the death certificate is "Faustino Vizcaíno Pelayo," meaning his mother was also a Pelayo. Crescenciana's surname was "Pelayo Naranjo." This means that **both of Irene's parents carried the Pelayo surname**: her father through his mother, and her mother as her paternal name. This was not uncommon in small, endogamous rural communities where families intermarried over generations.
@@ -470,7 +471,7 @@ Note the depth of the Pelayo surname: **both of Irene's parents carried it**. He
 | **1911** | -- | Aurora Ahumada (Secundino's sister) born July 14 |
 | **~1916** | -- | Secundino Ahumada Fuentes (Irene's future husband) born (~May 22, 1917 per genealogical narrative, or 1916 per marriage certificate age of 21 in May 1937) |
 | **1917** | -- | Juan Rulfo born May 16 in Apulco, Jalisco |
-| **1924-1937** | -- | Crescenciana Pelayo Naranjo (Irene's mother) dies (alive at Irene's birth, "finada" by the 1937 marriage) |
+| **~1930** | ~6 | Crescenciana Pelayo Naranjo (Irene's mother) dies when Irene is around six years old (per family memory; "finada" by the 1937 marriage) |
 | **May 24, 1924** | 0 | **Irene (Yrene) Vizcaíno Pelayo born** in Rancho de Los González, Tonaya, Jalisco |
 | **1926** | 2 | Calles Law enacted; Catholic Church suspends all public worship July 31; Cristero War begins |
 | **1927** | 3 | María Vizcaíno Arias (Rulfo's mother) dies |
