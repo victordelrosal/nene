@@ -113,6 +113,7 @@
   .num{text-align:center;font:500 12px/1 system-ui,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--faint);margin-top:6vh}
   .cap h2{text-align:center;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(34px,9vw,44px);line-height:1.05;margin:14px 0 6px}
   .epoca{text-align:center;font-style:italic;color:var(--soft);font-size:16px}
+  .obra{display:block;width:max-content;max-width:100%;margin:14px auto 0;padding:6px 14px;border-radius:999px;border:1px solid rgba(169,118,31,.35);color:#a9761f;font:600 11px/1.2 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}
   .orn{text-align:center;color:var(--accent);letter-spacing:.6em;margin:26px 0 30px;font-size:14px}
   .epi{margin:0 auto 34px;max-width:26em;text-align:right;font-style:italic;color:var(--soft);font-size:calc(var(--fs) - 2px);line-height:1.55}
   .epi span{display:block;font-style:normal;font-size:13px;margin-top:6px;color:var(--faint)}
@@ -261,8 +262,33 @@ const LIBRO = {
       espera:"Los papeles ya dicen dónde y cuándo. Falta lo que solo sabe la familia: <em>cómo se conocieron</em> y qué contaba ella de esos días." },
     { id:"c3", n:"Capítulo 3", titulo:"La casa de los 18", epoca:"1938 a 1971", estado:"espera",
       espera:"Dieciocho hijos, de Griselda a Alicia. Falta <em>la casa</em> de Villa de Álvarez, un día normal con ella, lo que cocinaba, de qué vivía la familia." },
-    { id:"c4", n:"Capítulo 4", titulo:"Vistahermosa", epoca:"1971 a 2019", estado:"espera",
-      espera:"La mudanza a Colima, <em>las casas donde vivió</em> además de Paul Harris, la muerte de Secundino, la viudez, el viaje a Europa." },
+    { id:"c4", n:"Capítulo 4", titulo:"Vistahermosa", epoca:"1971 a 2019", estado:"publicado", parcial:true,
+      epigrafe:{ texto:"Paul P. Harris No. 26, Col. Vistahermosa, Colima, Col.",
+                 fuente:"Último domicilio, acta de defunción, 2019" },
+      prosa:[
+        "En julio de 1971 Nene dejó Villa de Álvarez y se fue a vivir a la ciudad de Colima, que está pegadita. Llevaba en la Villa más de treinta años, desde antes de casarse. Ya no volvió a vivir ahí.",
+        "Cuatro años después, el 17 de febrero de 1975, murió Secundino. La fecha la dio Karen del Rosal Ahumada, hija de María de los Ángeles: en un primer audio dijo 15, lo borró y mandó otro con el 17. Ningún papel de los que tenemos la registra todavía, y nadie nos ha contado de qué murió ni cómo fue ese día para ella. Nene tenía cincuenta años y casi treinta y ocho de casada. Le quedaban por delante cuarenta y cuatro años de viuda.",
+        "§",
+        "En Colima no tuvo una sola casa. Los papeles nada más guardan la última, Paul P. Harris 26, en la colonia Vistahermosa, que es la que aparece en su acta de defunción. Pero la familia se acuerda de otras.",
+        "Yelina Ahumada Ramírez, hija de Salvador, recuerda tres. Una en Lomas de Circunvalación, de la que no se sabe la calle; ahí vivían también su hijo Carlos y su familia, los Ahumada Viveros. Otra fue la casa de Alicia, la más chica de sus hijas, en la calle que sube del Espíritu Santo, esquina con Alfonso Sierra Partida, en Jardines de Vista Hermosa. Y una tercera en una calle con pavimento hidráulico, entre la Constitución y la Ignacio Sandoval, que todavía no tiene nombre en este libro. Yelina quedó de investigar las tres calles.",
+        "En qué años vivió en cada casa, y en qué orden, todavía no lo sabemos. Lo que sí se ve es que dos de esas casas llevan nombre de hijo: la de Lomas de Circunvalación, donde vivía Carlos, y la de Alicia. No sabemos si fue ella la que se fue acercando a sus hijos o si fueron ellos los que la fueron jalando, pero el mapa de sus casas parece el de una mamá que nunca se quedó lejos de los suyos.",
+        "En algún momento le sacaron pasaporte para ir a Europa, y así fue como apareció el 24 de mayo en sus papeles. A dónde fue, con quién y qué le pareció, es otra historia que espera su voz.",
+        "De esos cuarenta y ocho años en Colima, que son la mitad de su vida, este capítulo apenas tiene el esqueleto: una mudanza, una muerte, cuatro casas y un pasaporte. Lo demás, la viudez, las visitas, los nietos y los bisnietos que la iban a ver, lo tienen ustedes."
+      ],
+      notas:[
+        "La mudanza a Colima en julio de 1971: informe documental de la familia (2026); falta localizar el papel original.",
+        "La muerte de Secundino, 17 de febrero de 1975: audio de Karen del Rosal Ahumada (20 de octubre de 2026), que corrigió su primer audio. Es una voz; falta un documento o una segunda voz.",
+        "Las tres casas: audio de Yelina Ahumada Ramírez (20 de octubre de 2026). La tercera calle, «de la Constitución a Ignacio Sandoval», es como entendimos el audio.",
+        "Paul P. Harris 26 y su estado de viuda en 2019: acta de defunción (Villa de Álvarez, 2019).",
+        "El pasaporte para Europa: relato genealógico de Roberto Ahumada Vizcaíno (2020)."
+      ],
+      preguntas:[
+        "¿De qué murió Secundino, y cómo fue ese día para ella?",
+        "¿En qué años vivió en cada casa, y en qué orden? ¿Vivió también con Abel o con otro de sus hijos?",
+        "¿Cómo se llaman las calles de Lomas de Circunvalación y de la tercera casa?",
+        "¿A dónde fue en Europa, y con quién?",
+        "¿Cómo eran sus días de viuda: quién la visitaba, qué hacía, qué le gustaba?"
+      ] },
     { id:"c5", n:"Capítulo 5", titulo:"Su manera", epoca:"toda la vida", estado:"espera",
       espera:"Su fe, de qué se reía, su frase, cómo mantenía unida a la familia, <em>la música</em>." },
     { id:"c6", n:"Capítulo 6", titulo:"La despedida", epoca:"2019", estado:"espera",
@@ -279,7 +305,7 @@ let cur = null;
 
 function render(){
   $("#main").innerHTML = caps.map((c,i) => {
-    const head = `<div class="num">${c.n}</div><h2>${c.titulo}</h2>${c.epoca?`<div class="epoca">${c.epoca}</div>`:""}<div class="orn">✦ ✦ ✦</div>`;
+    const head = `<div class="num">${c.n}</div><h2>${c.titulo}</h2>${c.epoca?`<div class="epoca">${c.epoca}</div>`:""}${c.parcial?`<div class="obra">En construcción · crece con cada audio</div>`:""}<div class="orn">✦ ✦ ✦</div>`;
     let body;
     if (c.estado === "publicado"){
       let first = true, afterSep = false;
