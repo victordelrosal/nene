@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f7f1e5">
+<title>Mamá Nene · el libro</title>
+<meta name="description" content="La vida de Irene Vizcaíno Pelayo, 1924 a 2019, contada por su familia. Primer borrador, se escribe capítulo por capítulo.">
+<meta property="og:title" content="Mamá Nene · el libro">
+<meta property="og:description" content="La vida de Irene Vizcaíno Pelayo, contada por su familia. Capítulo 1: El rancho.">
+<meta property="og:image" content="https://victordelrosal.com/nene/og-image.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f1e5; --ink:#2b2219; --soft:#6f6150; --faint:#a6977f; --rule:#e3d8c4; --accent:#8a5a2b;
+    --cover:#14233f; --gold:#d8bd78; --fs:19px;
+  }
+  body.sepia{--paper:#efe3cb;--ink:#3a2c1c;--soft:#6e5a40;--faint:#a08a68;--rule:#dccaa6}
+  body.noche{--paper:#16130f;--ink:#e6dccb;--soft:#a89b86;--faint:#6f6555;--rule:#2c261e;--accent:#d8bd78}
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Literata,Georgia,serif;transition:background .3s,color .3s}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+  /* top bar, Kindle-style */
+  .bar{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
+    padding:calc(env(safe-area-inset-top) + 10px) 14px 10px;background:var(--paper);border-bottom:1px solid var(--rule);
+    font:500 13px/1 system-ui,sans-serif;color:var(--soft);transition:transform .3s}
+  .bar.hide{transform:translateY(-110%)}
+  .bar .t{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 8px}
+  .bar button{padding:8px 10px;border-radius:8px;min-width:44px;min-height:36px}
+  .bar button:active{background:var(--rule)}
+  .foot{position:fixed;bottom:0;left:0;right:0;z-index:20;padding:8px 16px calc(env(safe-area-inset-bottom) + 8px);
+    background:var(--paper);font:12px/1 system-ui,sans-serif;color:var(--faint);display:flex;justify-content:space-between;gap:10px}
+  .prog{position:fixed;left:0;bottom:0;height:2px;background:var(--accent);z-index:21;width:0}
+
+  /* cover */
+  .cover{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:70px 20px 60px;background:#e9e1d2}
+  body.noche .cover{background:#0d0b08}
+  .book{width:min(78vw,340px);aspect-ratio:6/9;background:var(--cover);color:#f1e7d2;border-radius:3px 8px 8px 3px;position:relative;
+    box-shadow:inset 6px 0 10px -6px rgba(0,0,0,.6),0 24px 50px rgba(20,20,40,.35),0 4px 10px rgba(0,0,0,.2);
+    display:flex;flex-direction:column;align-items:center;text-align:center;padding:9% 9% 7%;overflow:hidden}
+  .book::before{content:"";position:absolute;inset:4.5%;border:1px solid rgba(216,189,120,.45);pointer-events:none}
+  .book .serie{font:500 10px/1 system-ui,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-top:4%}
+  .book h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(40px,12vw,54px);line-height:.95;margin:7% 0 0}
+  .book h1 em{color:var(--gold)}
+  .book .foto{width:58%;aspect-ratio:1;margin:8% 0 0;border-radius:50%;background:url(../historias/nene-casino.jpg) center/cover;
+    box-shadow:0 0 0 2px rgba(216,189,120,.6),0 10px 30px rgba(0,0,0,.45)}
+  .book .sub{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(16px,4.6vw,19px);margin-top:7%;color:#e6dbc4}
+  .book .autor{margin-top:auto;font:500 10px/1.5 system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#cdbf9f}
+  .cover .meta{margin-top:26px;text-align:center;font:14px/1.5 system-ui,sans-serif;color:var(--soft);max-width:340px}
+  .cover .go{margin-top:16px;padding:13px 28px;border-radius:999px;background:var(--cover);color:#f1e7d2;font:600 15px/1 system-ui,sans-serif;box-shadow:0 6px 18px rgba(20,35,63,.25)}
+  body.noche .cover .go{background:var(--gold);color:#14130f}
+  .cover .alt{margin-top:12px;font:14px/1 system-ui,sans-serif;color:var(--soft);text-decoration:underline;text-underline-offset:3px;padding:10px}
+
+  /* reading column */
+  main{max-width:36em;margin:0 auto;padding:calc(env(safe-area-inset-top) + 80px) 24px 110px}
+  .cap{display:none}
+  .cap.on{display:block}
+  .num{text-align:center;font:500 12px/1 system-ui,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--faint);margin-top:6vh}
+  .cap h2{text-align:center;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(34px,9vw,44px);line-height:1.05;margin:14px 0 6px}
+  .epoca{text-align:center;font-style:italic;color:var(--soft);font-size:16px}
+  .orn{text-align:center;color:var(--accent);letter-spacing:.6em;margin:26px 0 30px;font-size:14px}
+  .epi{margin:0 auto 34px;max-width:26em;text-align:right;font-style:italic;color:var(--soft);font-size:calc(var(--fs) - 2px);line-height:1.55}
+  .epi span{display:block;font-style:normal;font-size:13px;margin-top:6px;color:var(--faint)}
+  .prosa p{font-size:var(--fs);line-height:1.68;margin:0;text-align:justify;hyphens:auto;-webkit-hyphens:auto;text-indent:1.4em}
+  .prosa p.first{text-indent:0}
+  .prosa p.first::first-letter{float:left;font-family:"Cormorant Garamond",serif;font-size:4.1em;line-height:.8;padding:.06em .08em 0 0;color:var(--accent)}
+  .prosa p.sec{text-indent:0;margin-top:1.6em}
+  .prosa .sep{text-align:center;color:var(--faint);margin:1.3em 0 .4em;letter-spacing:.5em}
+  .fin{text-align:center;color:var(--accent);margin:40px 0 0;letter-spacing:.6em}
+
+  .caja{margin:44px 0 0;padding:20px 20px 16px;border:1px solid var(--rule);border-radius:12px;font:15px/1.55 system-ui,sans-serif;color:var(--soft)}
+  .caja h3{margin:0 0 10px;font:600 12px/1 system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .caja ol,.caja ul{margin:0;padding-left:1.2em}
+  .caja li{margin:0 0 7px}
+  .notas{font-size:14px}
+
+  .nav{display:flex;justify-content:space-between;gap:12px;margin-top:40px}
+  .nav button{flex:1;padding:14px;border:1px solid var(--rule);border-radius:12px;font:500 14px/1.3 system-ui,sans-serif;color:var(--soft);text-align:left}
+  .nav button.r{text-align:right}
+  .nav button[disabled]{opacity:.35;cursor:default}
+
+  /* pending chapter */
+  .espera{text-align:center;color:var(--soft);font-size:17px;line-height:1.6;margin:10px auto 0;max-width:24em}
+  .espera em{color:var(--accent)}
+
+  /* contents drawer */
+  .veil{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+  .veil.on{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;bottom:0;left:0;width:min(86vw,360px);background:var(--paper);z-index:31;transform:translateX(-102%);
+    transition:transform .3s cubic-bezier(.22,1,.36,1);overflow:auto;padding:calc(env(safe-area-inset-top) + 22px) 0 30px;box-shadow:8px 0 30px rgba(0,0,0,.18)}
+  .drawer.on{transform:none}
+  .drawer h4{margin:0 22px 4px;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:28px}
+  .drawer .s{margin:0 22px 18px;font:13px/1.4 system-ui,sans-serif;color:var(--faint)}
+  .toc button{display:flex;width:100%;gap:12px;align-items:baseline;padding:13px 22px;text-align:left;border-top:1px solid var(--rule)}
+  .toc button:last-child{border-bottom:1px solid var(--rule)}
+  .toc .n{font:500 12px/1 system-ui,sans-serif;color:var(--faint);min-width:2.2em}
+  .toc .tt{flex:1;font-size:17px}
+  .toc .st{font:500 11px/1 system-ui,sans-serif;letter-spacing:.06em;color:var(--faint);white-space:nowrap}
+  .toc .pub .st{color:var(--accent)}
+  .toc .pend .tt{color:var(--soft)}
+  .toc button.cur{background:var(--rule)}
+  .drawer .como{margin:22px;font:14px/1.55 system-ui,sans-serif;color:var(--soft)}
+
+  /* Aa panel */
+  .aa{position:fixed;top:calc(env(safe-area-inset-top) + 58px);right:12px;z-index:25;background:var(--paper);border:1px solid var(--rule);border-radius:14px;
+    padding:14px;box-shadow:0 12px 30px rgba(0,0,0,.15);display:none;font:14px/1 system-ui,sans-serif;width:230px}
+  .aa.on{display:block}
+  .aa .row{display:flex;gap:8px;margin-bottom:10px}
+  .aa .row:last-child{margin:0}
+  .aa button{flex:1;padding:10px 0;border:1px solid var(--rule);border-radius:10px}
+  .aa .p{background:#f7f1e5;color:#2b2219}.aa .se{background:#efe3cb;color:#3a2c1c}.aa .no{background:#16130f;color:#e6dccb}
+  @media (min-width:800px){ :root{--fs:20px} main{padding-top:100px} }
+</style>
+</head>
+<body>
+
+<header class="bar hide" id="bar">
+  <button id="bIndice" aria-label="Índice">☰ Índice</button>
+  <div class="t" id="bTitulo">Mamá Nene</div>
+  <button id="bAa" aria-label="Tamaño y fondo">Aa</button>
+</header>
+<div class="aa" id="aa" role="dialog" aria-label="Lectura">
+  <div class="row"><button data-fs="-1" aria-label="Letra más chica">A−</button><button data-fs="1" aria-label="Letra más grande">A+</button></div>
+  <div class="row"><button class="p" data-th="">Papel</button><button class="se" data-th="sepia">Sepia</button><button class="no" data-th="noche">Noche</button></div>
+</div>
+
+<div class="veil" id="veil"></div>
+<nav class="drawer" id="drawer" aria-label="Índice">
+  <h4>Mamá Nene</h4>
+  <div class="s">Primer borrador · se escribe capítulo por capítulo</div>
+  <div class="toc" id="toc"></div>
+  <p class="como">Cada capítulo se escribe con los papeles de la familia y con sus voces. Lo que todavía no sabemos, el libro lo dice. Los capítulos en espera se abren cuando lleguen los audios al grupo <b>Historias de Nene</b>.</p>
+</nav>
+
+<section class="cover" id="cover">
+  <div class="book" role="img" aria-label="Portada: Mamá Nene">
+    <div class="serie">Historias de Nene</div>
+    <h1>Mamá<br><em>Nene</em></h1>
+    <div class="foto"></div>
+    <div class="sub">Irene Vizcaíno Pelayo<br>1924 a 2019</div>
+    <div class="autor">Escrito por su familia<br>Escribanos de la HGFA</div>
+  </div>
+  <div class="meta" id="coverMeta"></div>
+  <button class="go" id="goLeer">Empezar a leer</button>
+  <button class="alt" id="goIndice">Ver el índice</button>
+</section>
+
+<main id="main" hidden></main>
+
+<div class="foot" id="foot" hidden><span id="fCap"></span><span id="fPct"></span></div>
+<div class="prog" id="prog"></div>
+
+<script>
+/* El libro. Un capítulo publicado tiene "prosa"; uno en espera tiene "espera" (lo que le falta).
+   Para publicar uno nuevo: llenar prosa, notas y preguntas, y cambiar estado a "publicado". */
+const LIBRO = {
+  actualizado: "20 de octubre de 2026",
+  capitulos: [
+    { id:"prologo", n:"Prólogo", titulo:"Nene", estado:"espera",
+      espera:"Por qué le decían Nene, quién se lo puso, y quién fue ella en una sola frase. Lo escriben sus voces." },
+
+    { id:"c1", n:"Capítulo 1", titulo:"El rancho", epoca:"1924 a 1937", estado:"publicado",
+      epigrafe:{ texto:"Soltera, mexicana, dedicada a los quehaceres de la casa, originaria del Rancho de Los González, Jal., y vecina de Villa de Álvarez, Col.",
+                 fuente:"Acta de matrimonio civil, Comala, 1937" },
+      prosa:[
+        "El papel más antiguo que tenemos de ella no la vio nacer. Es un acta de matrimonio levantada en Comala en mayo de 1937, y dice de Irene lo poco que un acta sabe decir: que era soltera, mexicana, de trece años, dedicada a los quehaceres de la casa; que venía del Rancho de Los González, en Jalisco, y que vivía en Villa de Álvarez, en Colima. En esa línea de oficina cabe su infancia entera. Lo demás tenemos que juntarlo nosotros, sus hijos, sus nietos y los nietos de sus nietos, con los papeles que quedaron y con lo que cada quien se acuerde.",
+        "El rancho estaba en el municipio de Tonaya, en la Sierra de Amula, al sur de Jalisco: tierra de barrancas y de agave, donde el mezcal se destila desde hace más de un siglo. Ahí nació. La fecha también tiene su historia.",
+        "Su mamá le dijo que había nacido en día de la Virgen, y a ella con eso le bastó. Toda su vida festejó el 13 de mayo, día de la Virgen de Fátima, y así la festejamos nosotros hasta su último cumpleaños. El 24 de mayo de 1924, que es la fecha del registro, apareció muy tarde, cuando le sacaron pasaporte para ir a Europa. Ella siguió con el 13. Este libro guarda las dos: el 24 es el día de los papeles, el 13 es el día que le dio su madre.",
+        "Tampoco el nombre se quedó quieto. En el juzgado de Comala escribieron Irene; dos semanas después, en la parroquia del mismo pueblo, escribieron Yrene, con la y de antes, y con esa y la despidió el acta de defunción en 2019. Usó los dos sin preocuparse. Y para nosotros fue Nene, que es un nombre que ningún papel registra y cuyo origen nadie nos ha contado todavía.",
+        "§",
+        "Su papá se llamaba Faustino Vizcaíno, campesino, nacido hacia 1884. Su mamá, Crescenciana Pelayo Naranjo, era campesina también. Los dos traían el Pelayo: ella como primer apellido, él por su madre, porque su nombre completo era Faustino Vizcaíno Pelayo. En los árboles que la familia dibujó a mano se ve cómo en esos ranchos los mismos apellidos se iban cruzando, generación tras generación, hasta que ya no se sabe bien dónde termina una familia y empieza la otra.",
+        "Hacia atrás, esos árboles llegan lejos. Del lado Pelayo suben cinco generaciones: Miguel, Ignacio, Vicente, Hilario y, al final, Crescenciana. Del lado Vizcaíno empiezan con Lucas Vizcaíno y Clara Vargas, siguen con su hijo Alejo y bajan a Faustino. Junto al nombre de Lucas, quien dibujó el árbol escribió entre paréntesis dos palabras: Juan Rulfo. El autor de Pedro Páramo llevaba el Vizcaíno por su madre, y su gente era de esa misma región del sur de Jalisco. Si el paréntesis dice lo que parece, Nene y Rulfo descendían de los mismos bisabuelos. No lo hemos confirmado. Lo dejamos como lo dejó quien dibujó el árbol, entre paréntesis.",
+        "A Crescenciana la perdió pronto. En el acta de 1937 ya aparece como finada. La memoria de la familia dice que murió hacia 1930, cuando Irene tenía unos seis años; ningún papel lo confirma, y nadie nos ha dicho de qué murió. De esa madre le quedó por lo menos una frase, la del día de la Virgen, y la guardó hasta el final.",
+        "Según el árbol fueron nueve hermanos: Casilda, Irene, Elisa, Luis, Beatriz, Esperanza, Jovita, Isidro y Melesio. Junto a varios de esos nombres alguien dibujó una cruz chiquita. De su infancia con ellos no tenemos todavía ni una escena: con quién jugaba, a quién cuidaba, quién la cuidó a ella cuando faltó su mamá.",
+        "§",
+        "Nació cuatro años después de que terminara la Revolución, en uno de los rincones de México donde más se iba a sentir la guerra siguiente. En el verano de 1926, cuando ella tenía dos años, se suspendió el culto en todo el país y los templos quedaron sin misa. En Jalisco la gente del campo se levantó en armas; fue la Cristiada, que duró hasta 1929 y volvió a encenderse a mediados de los años treinta. Toda la niñez de Nene cabe entre esas dos guerras. Qué vio de ellas, qué oyó contar en su casa, si por su rancho pasaron soldados o si hubo misas a escondidas, son cosas que este capítulo todavía no sabe.",
+        "El relato que su hijo Roberto escribió a mano en 2020 dice de aquella gente que no sabía leer ni escribir. Lo que ella aprendió en el rancho lo aprendió de otra manera, y le alcanzó para todo lo que vino después.",
+        "En algún momento antes de mayo de 1937, Irene dejó la sierra. No sabemos el año, ni el motivo, ni si bajó con su papá y sus hermanos. Sabemos dónde llegó: a Villa de Álvarez, pegada a la ciudad de Colima. Ahí vivía en la primavera de 1937, con trece años. El 18 de mayo estaba en Comala, frente a un juez."
+      ],
+      notas:[
+        "Nacimiento, padres, oficios y lugar de origen: acta de matrimonio civil (Comala, 18 de mayo de 1937) y acta de defunción (Villa de Álvarez, 2019).",
+        "El 13 y el 24 de mayo, y el pasaporte para Europa: relato genealógico de Roberto Ahumada Vizcaíno (26 de junio de 2020) y memoria de la familia.",
+        "Irene y Yrene: acta civil, acta de la parroquia de San Miguel del Espíritu Santo (31 de mayo de 1937) y acta de defunción.",
+        "Linajes Vizcaíno y Pelayo, los nueve hermanos y la nota «(Juan Rulfo)»: árboles familiares a mano. El parentesco con Rulfo está por confirmar.",
+        "Muerte de Crescenciana hacia 1930: memoria de la familia, sin documento. La Cristiada (1926 a 1929, y de nuevo a mediados de los años treinta): historia general de México."
+      ],
+      preguntas:[
+        "¿Por qué le decían Nene, y quién se lo puso?",
+        "¿Qué contaba ella del rancho, de su mamá, de sus hermanos?",
+        "¿Cuándo y por qué se vinieron de Tonaya a Villa de Álvarez?",
+        "¿Les contó algo de la Cristiada, de los templos cerrados, de los soldados?"
+      ] },
+
+    { id:"c2", n:"Capítulo 2", titulo:"La boda", epoca:"1937", estado:"espera",
+      espera:"Los papeles ya dicen dónde y cuándo. Falta lo que solo sabe la familia: <em>cómo se conocieron</em> y qué contaba ella de esos días." },
+    { id:"c3", n:"Capítulo 3", titulo:"La casa de los 18", epoca:"1938 a 1971", estado:"espera",
+      espera:"Dieciocho hijos, de Griselda a Alicia. Falta <em>la casa</em> de Villa de Álvarez, un día normal con ella, lo que cocinaba, de qué vivía la familia." },
+    { id:"c4", n:"Capítulo 4", titulo:"Vistahermosa", epoca:"1971 a 2019", estado:"espera",
+      espera:"La mudanza a Colima, <em>las casas donde vivió</em> además de Paul Harris, la muerte de Secundino, la viudez, el viaje a Europa." },
+    { id:"c5", n:"Capítulo 5", titulo:"Su manera", epoca:"toda la vida", estado:"espera",
+      espera:"Su fe, de qué se reía, su frase, cómo mantenía unida a la familia, <em>la música</em>." },
+    { id:"c6", n:"Capítulo 6", titulo:"La despedida", epoca:"2019", estado:"espera",
+      espera:"Su último año, el velorio, el entierro y <em>el centenario</em> de 2024." },
+    { id:"epilogo", n:"Epílogo", titulo:"Lo que sigue vivo", estado:"espera",
+      espera:"Qué nos enseñó, en palabras o en silencio, y <em>qué de ella sigue vivo</em> en cada quien." }
+  ]
+};
+
+const $ = s => document.querySelector(s);
+const caps = LIBRO.capitulos;
+const pub = caps.filter(c => c.estado === "publicado");
+let cur = null;
+
+function render(){
+  $("#main").innerHTML = caps.map((c,i) => {
+    const head = `<div class="num">${c.n}</div><h2>${c.titulo}</h2>${c.epoca?`<div class="epoca">${c.epoca}</div>`:""}<div class="orn">✦ ✦ ✦</div>`;
+    let body;
+    if (c.estado === "publicado"){
+      let first = true, afterSep = false;
+      const ps = c.prosa.map(p => {
+        if (p === "§"){ afterSep = true; return `<div class="sep">· · ·</div>`; }
+        const cls = first ? "first" : (afterSep ? "sec" : "");
+        first = false; afterSep = false;
+        return `<p class="${cls}">${p}</p>`;
+      }).join("");
+      body = (c.epigrafe?`<blockquote class="epi">«${c.epigrafe.texto}»<span>${c.epigrafe.fuente}</span></blockquote>`:"")
+        + `<div class="prosa">${ps}</div><div class="fin">❦</div>`
+        + `<div class="caja"><h3>Este capítulo sigue abierto</h3><p style="margin:0 0 10px">Si usted sabe algo de esto, mándelo en audio al grupo Historias de Nene. Empiece con su nombre y de quién es hijo o nieto.</p><ul>${c.preguntas.map(q=>`<li>${q}</li>`).join("")}</ul></div>`
+        + `<div class="caja notas"><h3>De dónde sale cada cosa</h3><ol>${c.notas.map(n=>`<li>${n}</li>`).join("")}</ol></div>`;
+    } else {
+      body = `<p class="espera">Este capítulo espera sus voces.</p><p class="espera">${c.espera}</p>`
+        + `<div class="caja"><h3>Cómo se escribe</h3><p style="margin:0">Cuando lleguen audios al grupo Historias de Nene sobre esto, este capítulo se escribe con ellos.</p></div>`;
+    }
+    const prev = caps[i-1], next = caps[i+1];
+    const nav = `<div class="nav"><button data-go="${prev?prev.id:""}" ${prev?"":"disabled"}>‹ ${prev?prev.titulo:""}</button><button class="r" data-go="${next?next.id:""}" ${next?"":"disabled"}>${next?next.titulo:""} ›</button></div>`;
+    return `<article class="cap" id="${c.id}">${head}${body}${nav}</article>`;
+  }).join("");
+
+  $("#toc").innerHTML = caps.map(c =>
+    `<button data-go="${c.id}" class="${c.estado==="publicado"?"pub":"pend"}"><span class="n">${c.n.replace("Capítulo ","")}</span><span class="tt">${c.titulo}</span><span class="st">${c.estado==="publicado"?"Leer":"En espera"}</span></button>`).join("");
+
+  const words = pub.reduce((a,c)=>a + c.prosa.join(" ").split(/\s+/).length, 0);
+  $("#coverMeta").innerHTML = `Primer borrador · ${pub.length} de ${caps.length} partes escritas · unos ${Math.max(1,Math.round(words/230))} minutos de lectura<br>Actualizado el ${LIBRO.actualizado}`;
+}
+
+function open(id, keepScroll){
+  const c = caps.find(x => x.id === id) || pub[0];
+  cur = c;
+  $("#cover").hidden = true; $("#main").hidden = false; $("#foot").hidden = false;
+  document.querySelectorAll(".cap").forEach(a => a.classList.toggle("on", a.id === c.id));
+  document.querySelectorAll(".toc button").forEach(b => b.classList.toggle("cur", b.dataset.go === c.id));
+  $("#bTitulo").textContent = c.titulo;
+  $("#fCap").textContent = `${c.n} · ${c.titulo}`;
+  $("#bar").classList.remove("hide");
+  if (!keepScroll) window.scrollTo(0,0);
+  if (location.hash !== "#"+c.id) history.replaceState(null,"","#"+c.id);
+  closeDrawer(); progress();
+}
+function showCover(){
+  $("#cover").hidden = false; $("#main").hidden = true; $("#foot").hidden = true;
+  $("#bar").classList.add("hide"); $("#prog").style.width = 0; window.scrollTo(0,0);
+}
+function progress(){
+  if ($("#main").hidden) return;
+  const h = document.documentElement.scrollHeight - innerHeight;
+  const p = h > 0 ? Math.min(100, Math.round(scrollY / h * 100)) : 100;
+  $("#prog").style.width = p + "%";
+  $("#fPct").textContent = cur && cur.estado === "publicado" ? p + "%" : "En espera";
+  if (cur) localStorage.setItem("nene-libro", JSON.stringify({id:cur.id, y:scrollY}));
+}
+function openDrawer(){ $("#drawer").classList.add("on"); $("#veil").classList.add("on"); }
+function closeDrawer(){ $("#drawer").classList.remove("on"); $("#veil").classList.remove("on"); }
+
+render();
+document.addEventListener("click", e => {
+  const g = e.target.closest("[data-go]");
+  if (g && g.dataset.go) open(g.dataset.go);
+  if (!e.target.closest("#aa") && !e.target.closest("#bAa")) $("#aa").classList.remove("on");
+});
+$("#bIndice").onclick = openDrawer; $("#goIndice").onclick = openDrawer; $("#veil").onclick = closeDrawer;
+$("#bAa").onclick = () => $("#aa").classList.toggle("on");
+$("#goLeer").onclick = () => {
+  const s = JSON.parse(localStorage.getItem("nene-libro") || "null");
+  if (s && caps.find(c=>c.id===s.id)){ open(s.id, true); window.scrollTo(0, s.y || 0); } else open(pub[0].id);
+};
+$("#bTitulo").onclick = showCover;
+const prefs = JSON.parse(localStorage.getItem("nene-prefs") || "{}");
+function applyPrefs(){
+  document.body.className = prefs.th || "";
+  if (prefs.fs) document.documentElement.style.setProperty("--fs", prefs.fs + "px");
+  localStorage.setItem("nene-prefs", JSON.stringify(prefs));
+}
+document.querySelectorAll("#aa [data-fs]").forEach(b => b.onclick = () => {
+  const now = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fs")) || 19;
+  prefs.fs = Math.max(15, Math.min(26, now + (+b.dataset.fs))); applyPrefs();
+});
+document.querySelectorAll("#aa [data-th]").forEach(b => b.onclick = () => { prefs.th = b.dataset.th; applyPrefs(); });
+applyPrefs();
+let lastY = 0;
+addEventListener("scroll", () => {
+  progress();
+  if (!$("#main").hidden){ $("#bar").classList.toggle("hide", scrollY > lastY && scrollY > 120); }
+  lastY = scrollY;
+}, {passive:true});
+if (location.hash.length > 1 && caps.find(c => c.id === location.hash.slice(1))) open(location.hash.slice(1));
+</script>
+</body>
+</html>
