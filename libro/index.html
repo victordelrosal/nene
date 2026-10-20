@@ -294,11 +294,11 @@ function render(){
       }).join("");
       body = (c.epigrafe?`<blockquote class="epi">«${c.epigrafe.texto}»<span>${c.epigrafe.fuente}</span></blockquote>`:"")
         + `<div class="prosa">${ps}</div><div class="fin">❦</div>`
-        + `<div class="caja"><h3>Este capítulo sigue abierto</h3><p style="margin:0 0 10px">Si usted sabe algo de esto, mándelo en audio al grupo Historias de Nene. Empiece con su nombre y de quién es hijo o nieto.</p><ul>${c.preguntas.map(q=>`<li>${q}</li>`).join("")}</ul><p style="margin:12px 0 0">¿Todavía no está en el grupo? Si es de la familia, únase aquí:</p><a class="wa" href="https://chat.whatsapp.com/K5HRoy2wxeDBKlym46oyQk" target="_blank" rel="noopener">Unirme a Historias de Nene</a></div>`
+        + `<div class="caja"><h3>Este capítulo sigue abierto</h3><p style="margin:0 0 10px">Si usted sabe algo de esto, mándelo en audio al grupo Historias de Nene. Empiece con su nombre y de quién es hijo o nieto.</p><ul>${c.preguntas.map(q=>`<li>${q}</li>`).join("")}</ul><p style="margin:12px 0 0">¿Todavía no estás en el grupo? Si eres de la familia, únete aquí:</p><a class="wa" href="https://chat.whatsapp.com/K5HRoy2wxeDBKlym46oyQk" target="_blank" rel="noopener">Unirme a Historias de Nene</a></div>`
         + `<div class="caja notas"><h3>De dónde sale cada cosa</h3><ol>${c.notas.map(n=>`<li>${n}</li>`).join("")}</ol></div>`;
     } else {
       body = `<p class="espera">Este capítulo espera sus voces.</p><p class="espera">${c.espera}</p>`
-        + `<div class="caja"><h3>Cómo se escribe</h3><p style="margin:0">Cuando lleguen audios al grupo Historias de Nene sobre esto, este capítulo se escribe con ellos. Si es de la familia y todavía no está, únase:</p><a class="wa" href="https://chat.whatsapp.com/K5HRoy2wxeDBKlym46oyQk" target="_blank" rel="noopener">Unirme a Historias de Nene</a></div>`;
+        + `<div class="caja"><h3>Cómo se escribe</h3><p style="margin:0">Cuando lleguen audios al grupo Historias de Nene sobre esto, este capítulo se escribe con ellos. Si eres de la familia y todavía no estás, únete:</p><a class="wa" href="https://chat.whatsapp.com/K5HRoy2wxeDBKlym46oyQk" target="_blank" rel="noopener">Unirme a Historias de Nene</a></div>`;
     }
     const prev = caps[i-1], next = caps[i+1];
     const nav = `<div class="nav"><button data-go="${prev?prev.id:""}" ${prev?"":"disabled"}>‹ ${prev?prev.titulo:""}</button><button class="r" data-go="${next?next.id:""}" ${next?"":"disabled"}>${next?next.titulo:""} ›</button></div>`;
