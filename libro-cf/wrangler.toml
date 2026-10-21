@@ -1,0 +1,9 @@
+# Cloudflare Pages config for the Mamá Nene book (nene.kluxy.app). Static files come from ../libro.
+name = "nene-libro"
+pages_build_output_dir = "../libro"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nene-visitas"
+database_id = "82559207-29bc-4911-858f-f8bc1c8fee6a"

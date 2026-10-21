@@ -355,6 +355,7 @@ function render(){
 
 function open(id, keepScroll){
   const c = caps.find(x => x.id === id) || pub[0];
+  if (cur !== c && location.hostname === "nene.kluxy.app") navigator.sendBeacon("/api/leer?c=" + c.id);
   cur = c;
   $("#cover").hidden = true; $("#main").hidden = false; $("#foot").hidden = false;
   document.querySelectorAll(".cap").forEach(a => a.classList.toggle("on", a.id === c.id));
